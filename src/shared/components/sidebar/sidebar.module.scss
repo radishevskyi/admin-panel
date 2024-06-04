@@ -4,13 +4,19 @@
   box-sizing: border-box;
   height: 100%;
   padding: 0;
+
+  &.collapsed {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 60px;
+  }
 }
 
 .navigation {
   list-style-type: none;
   padding: 0;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  font-size: 15px;
+  font-size: 13px;
   cursor: pointer;
 }
 
@@ -21,16 +27,30 @@
   line-height: 1.5;
   padding: 5px 10px;
   letter-spacing: 0.6px;
-}
 
-.sidebarList:hover {
-  color: white;
-  background-color: rgba(255, 255, 255, 0.112);
+  &:hover {
+    color: white;
+    background-color: rgba(255, 255, 255, 0.112);
+  }
+
+  &.collapsed {
+    padding: 10px;
+  }
+
+  &.collapsed:hover {
+    color: #95f4ff;
+    background: none;
+  }
 }
 
 .arrow {
   font-size: 10px;
   margin-left: auto;
+  transition: transform 0.2s;
+}
+
+.arrow.open {
+  transform: rotate(90deg);
 }
 
 .icons {
@@ -40,4 +60,23 @@
 .adminServices {
   margin: 0;
   padding: 0 10px;
+}
+
+.subMenu {
+  list-style-type: none;
+  padding-left: 15px;
+}
+
+.collapseButton {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+  margin: 10px;
+  align-self: flex-end;
+
+  &:hover {
+    color: #ccc;
+  }
 }

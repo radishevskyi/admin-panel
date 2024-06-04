@@ -5,11 +5,11 @@ function Index() {
   return (
     <>
       <Head>
-        <title>Home page</title>
+        <title>Document flow</title>
         <meta name='description' content='content' />
       </Head>
       <main>
-        <h1>Hello</h1>
+        <h1>Main Page</h1>
       </main>
     </>
   );
