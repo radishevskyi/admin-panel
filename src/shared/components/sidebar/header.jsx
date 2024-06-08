@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus, faChevronLeft } from '@fortawesome/free-solid-svg-icons';
 import { faStar, faFolder } from '@fortawesome/free-regular-svg-icons';
-import styles from '@/shared/components/sidebar/header.module.scss';
 
 function Header({ onToggleSidebar, isCollapsed }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -12,26 +11,18 @@ function Header({ onToggleSidebar, isCollapsed }) {
   };
 
   return (
-    <header
-      className={`${styles.header} ${
-        isCollapsed ? styles.collapsedHeader : ''
-      }`}
-    >
-      <button className={styles.button}>
-        <FontAwesomeIcon icon={faStar} className={styles.icon} />
+    <header className={`header ${isCollapsed ? 'collapsedHeader' : ''}`}>
+      <button className='button'>
+        <FontAwesomeIcon icon={faStar} className='icon' />
       </button>
-      <button className={styles.button}>
-        <FontAwesomeIcon icon={faFolder} className={styles.iconFolder} />
+      <button className='button'>
+        <FontAwesomeIcon icon={faFolder} className='iconFolder' />
       </button>
-      <button className={styles.button}>
-        <FontAwesomeIcon
-          icon={faPlus}
-          onClick={toggleMenu}
-          className={styles.icon}
-        />
+      <button className='button'>
+        <FontAwesomeIcon icon={faPlus} onClick={toggleMenu} className='icon' />
       </button>
       {isMenuOpen && (
-        <div className={styles.dropdownMenu}>
+        <div className={`dropdownMenu ${isCollapsed ? 'collapsedMenu' : ''}`}>
           <ul>
             <li>Вихідний документ</li>
             <li>Внутрішній документ</li>
@@ -40,16 +31,14 @@ function Header({ onToggleSidebar, isCollapsed }) {
         </div>
       )}
       <button
-        className={`${styles.buttonChevronLeft} ${
-          isCollapsed ? styles.collapsedPosition : ''
+        className={`buttonChevronLeft ${
+          isCollapsed ? 'collapsedPosition' : ''
         }`}
         onClick={onToggleSidebar}
       >
         <FontAwesomeIcon
           icon={faChevronLeft}
-          className={`${styles.chevronIcon} ${
-            isCollapsed ? styles.collapsed : ''
-          }`}
+          className={`chevronIcon ${isCollapsed ? 'is--collapsed' : ''}`}
         />
       </button>
     </header>

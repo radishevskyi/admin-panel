@@ -1,12 +1,15 @@
 import '@/shared/assets/styles/globals.css';
 import Sidebar from '@/shared/components/sidebar/sidebar';
-import styles from '@/shared/assets/styles/layout/layout.module.scss';
+import '@/shared/assets/styles/layout/layout.scss';
+import '@/shared/components/sidebar/list-item.scss';
+import '@/shared/components/sidebar/sidebar.scss';
+import '@/shared/components/sidebar/header.scss';
 
 export default function App({ Component, pageProps }) {
   return (
-    <div className={styles.container}>
+    <div className='container'>
       <Sidebar />
-      <div className={styles.content}>
+      <div className='content'>
         <Component {...pageProps} />
       </div>
     </div>
