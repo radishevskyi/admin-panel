@@ -1,0 +1,111 @@
+.sidebar {
+  width: 200px;
+  background-color: #171821;
+  box-sizing: border-box;
+  height: 100%;
+  padding: 0;
+}
+
+.sidebar.collapsed {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 60px;
+}
+
+.navigation {
+  list-style-type: none;
+  padding: 0;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.sidebarList {
+  display: flex;
+  align-items: center;
+  color: rgba(255, 255, 255, 0.797);
+  line-height: 1.5;
+  padding: 5px 10px;
+  letter-spacing: 0.6px;
+  position: relative;
+  user-select: none;
+}
+
+.sidebarList:hover {
+  color: white;
+  background-color: rgba(255, 255, 255, 0.112);
+}
+
+.sidebarList.collapsed {
+  padding: 10px;
+}
+
+.sidebarList.collapsed:hover {
+  color: #95f4ff;
+  background: none;
+}
+
+.arrow {
+  font-size: 10px;
+  margin-left: auto;
+  transition: transform 0.2s;
+}
+
+.arrow.open {
+  transform: rotate(90deg);
+}
+
+.icons {
+  width: 15px;
+}
+
+.adminServices {
+  margin: 0;
+  padding: 0 10px;
+}
+
+.collapseButton {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+  margin: 10px;
+  align-self: flex-end;
+}
+
+.collapseButton:hover {
+  color: #ccc;
+}
+
+.dropdownMenu {
+  position: absolute;
+  top: 140px;
+  left: 50px;
+  background-color: white;
+  border: 1px solid #1e1f32;
+  border-radius: 3px;
+  width: 160px;
+}
+
+.dropdownMenu.collapsedMenu {
+  top: 110px;
+  right: -130px;
+}
+
+.dropdownMenu ul {
+  list-style: none;
+  padding: 3px 0;
+  margin: 0;
+}
+
+.dropdownMenu li {
+  padding: 5px;
+  color: black;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.dropdownMenu li:hover {
+  background-color: rgba(0, 0, 0, 0.09);
+}

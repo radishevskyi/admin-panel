@@ -1,0 +1,24 @@
+.list-item-container {
+  position: relative;
+
+  &:hover {
+    .subMenu.is--sidebar-collapsed {
+      display: block;
+      position: absolute;
+      left: 20px;
+      top: 0;
+    }
+  }
+}
+
+.subMenu {
+  list-style-type: none;
+  padding-left: 15px;
+  position: relative;
+  display: none;
+  background-color: gray;
+
+  &:not(.is--sidebar-collapsed).is--open {
+    display: block;
+  }
+}
