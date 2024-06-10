@@ -17,12 +17,14 @@ function Sidebar() {
 
   return (
     <>
-      <div className={`sidebar ${isCollapsed ? 'collapsed' : ''}`}>
+      <div className={`sidebar ${isCollapsed ? 'sidebar-collapsed' : ''}`}>
         <Header
           onToggleSidebar={handleCollapseToggle}
           isCollapsed={isCollapsed}
         />
-        <ul className={`navigation ${isCollapsed ? 'collapsed' : ''}`}>
+        <ul
+          className={`sidebar-list ${isCollapsed ? 'sidebar-collapsed' : ''}`}
+        >
           {menuList.map((item) => (
             <ListItem
               text={item.text}

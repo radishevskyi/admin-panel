@@ -12,13 +12,13 @@ function ListItem({ id, text, icon, isSidebarCollapsed, subMenu }) {
   return (
     <li className='list-item-container'>
       <div
-        className={`sidebarList ${isSidebarCollapsed ? 'collapsed' : ''}`}
+        className={`sidebar-list-item ${isSidebarCollapsed ? 'collapsed' : ''}`}
         onClick={toggleOpen}
       >
         <FontAwesomeIcon icon={icon} className='icons' />
         {!isSidebarCollapsed && (
           <>
-            <span className='adminServices'>{text}</span>
+            <span className='admin-services'>{text}</span>
             {subMenu && (
               <FontAwesomeIcon
                 icon={faChevronRight}
@@ -30,13 +30,13 @@ function ListItem({ id, text, icon, isSidebarCollapsed, subMenu }) {
       </div>
       {subMenu && (
         <ul
-          className={`subMenu ${isOpen ? 'is--open' : ''} ${
+          className={`submenu ${isOpen ? 'is--open' : ''} ${
             isSidebarCollapsed ? 'is--sidebar-collapsed' : ''
           }`}
         >
           {subMenu.map((subItem) => (
-            <li key={subItem.id} className='sidebarList'>
-              <span className='adminServices'>{subItem.text}</span>
+            <li key={subItem.id} className='sidebar-list-item'>
+              <span className='admin-services'>{subItem.text}</span>
             </li>
           ))}
         </ul>

@@ -11,18 +11,18 @@ function Header({ onToggleSidebar, isCollapsed }) {
   };
 
   return (
-    <header className={`header ${isCollapsed ? 'collapsedHeader' : ''}`}>
-      <button className='button'>
+    <header className={`header ${isCollapsed ? 'collapsed-header' : ''}`}>
+      <button className='header-buttons'>
         <FontAwesomeIcon icon={faStar} className='icon' />
       </button>
-      <button className='button'>
-        <FontAwesomeIcon icon={faFolder} className='iconFolder' />
+      <button className='header-buttons'>
+        <FontAwesomeIcon icon={faFolder} className='icon folder' />
       </button>
-      <button className='button'>
+      <button className='header-buttons'>
         <FontAwesomeIcon icon={faPlus} onClick={toggleMenu} className='icon' />
       </button>
       {isMenuOpen && (
-        <div className={`dropdownMenu ${isCollapsed ? 'collapsedMenu' : ''}`}>
+        <div className={`dropdown-menu ${isCollapsed ? 'collapsed-menu' : ''}`}>
           <ul>
             <li>Вихідний документ</li>
             <li>Внутрішній документ</li>
@@ -31,14 +31,12 @@ function Header({ onToggleSidebar, isCollapsed }) {
         </div>
       )}
       <button
-        className={`buttonChevronLeft ${
-          isCollapsed ? 'collapsedPosition' : ''
-        }`}
+        className={`button-collapse ${isCollapsed ? 'collapsed-position' : ''}`}
         onClick={onToggleSidebar}
       >
         <FontAwesomeIcon
           icon={faChevronLeft}
-          className={`chevronIcon ${isCollapsed ? 'is--collapsed' : ''}`}
+          className={`chevron-icon ${isCollapsed ? 'is--collapsed' : ''}`}
         />
       </button>
     </header>

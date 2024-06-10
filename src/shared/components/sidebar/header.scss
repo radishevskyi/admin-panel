@@ -2,50 +2,81 @@
   display: flex;
   justify-content: space-around;
   position: relative;
-  padding: 10px;
+  padding: 5px;
+
+  &.collapsed-header {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 0.1px;
+    background-color: rgba(255, 255, 255, 0.468);
+  }
 }
 
-.header.collapsedHeader {
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-}
-
-.header::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  height: 0.1px;
-  background-color: rgba(255, 255, 255, 0.468);
-}
-
-.button {
+.header-buttons {
   background: none;
   border: none;
   color: white;
   cursor: pointer;
   padding: 4px;
+
+  &:hover {
+    color: #95f4ff;
+  }
 }
 
 .icon {
-  font-size: 18px;
-  width: 18px;
-  height: 18px;
+  font-size: 20px;
+  width: 20px;
+  height: 20px;
+
+  &.folder {
+    font-size: 18px;
+    width: 18px;
+    height: 18px;
+  }
 }
 
-.iconFolder {
-  font-size: 16px;
-  width: 16px;
-  height: 16px;
+.dropdown-menu {
+  position: absolute;
+  top: 30px;
+  right: -115px;
+  background-color: white;
+  border: 1px solid #1e1f32;
+  border-radius: 3px;
+  width: 160px;
+  z-index: 1000;
+
+  &.collapsed-menu {
+    top: 105px;
+    right: -130px;
+  }
+
+  ul {
+    padding: 3px 0;
+  }
+
+  li {
+    padding: 5px;
+    color: black;
+    cursor: pointer;
+    font-size: 13px;
+
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.09);
+    }
+  }
 }
 
-.button:hover {
-  color: #95f4ff;
-}
-
-.buttonChevronLeft {
+.button-collapse {
   border: none;
   color: white;
   font-size: 15px;
@@ -57,51 +88,19 @@
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
   padding: 3px;
+
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.575);
+  }
 }
 
-.buttonChevronLeft:hover {
-  background-color: rgba(0, 0, 0, 0.575);
+.collapsed-position {
+  right: -25px;
 }
 
-.collapsedPosition {
-  right: -20px;
-}
-
-.chevronIcon {
+.chevron-icon {
   transition: transform 0.3s;
   &.is--collapsed {
     transform: rotate(180deg);
   }
-}
-
-.dropdownMenu {
-  position: absolute;
-  top: 35px;
-  right: -110px;
-  background-color: white;
-  border: 1px solid #1e1f32;
-  border-radius: 3px;
-  width: 160px;
-}
-
-.dropdownMenu.collapsedMenu {
-  top: 110px;
-  right: -130px;
-}
-
-.dropdownMenu ul {
-  list-style: none;
-  padding: 3px 0;
-  margin: 0;
-}
-
-.dropdownMenu li {
-  padding: 5px;
-  color: black;
-  cursor: pointer;
-  font-size: 13px;
-}
-
-.dropdownMenu li:hover {
-  background-color: rgba(0, 0, 0, 0.09);
 }
