@@ -17,8 +17,9 @@
   font-size: 13px;
   cursor: pointer;
   height: calc(100vh - 48px);
-  overflow: auto;
+  overflow-y: auto;
   scrollbar-width: thin;
+  scrollbar-color: darkgrey #f1f1f1;
 
   &.sidebar-collapsed {
     display: flex;

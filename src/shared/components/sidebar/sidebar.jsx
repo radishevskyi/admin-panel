@@ -7,7 +7,10 @@ function Sidebar() {
   const [openItemId, setOpenItemId] = useState(null);
   const [isCollapsed, setIsCollapsed] = useState(false);
 
-  const handleToggle = (id) => {
+  const handleToggle = (id) => () => {
+    if (isCollapsed) {
+      setIsCollapsed(false);
+    }
     setOpenItemId(openItemId === id ? null : id);
   };
 
@@ -27,11 +30,14 @@ function Sidebar() {
         >
           {menuList.map((item) => (
             <ListItem
+              key={item.id}
               text={item.text}
               id={item.id}
               icon={item.icon}
               subMenu={item.subMenu}
               isSidebarCollapsed={isCollapsed}
+              onClick={handleToggle(item.id)}
+              isOpen={openItemId === item.id}
             />
           ))}
         </ul>

@@ -1,0 +1,21 @@
+.header-item {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 10px 8px 10px 30px;
+  border-bottom: 1px solid #171821;
+  position: relative;
+  z-index: 10;
+}
+
+.header-buttons {
+  background: none;
+  border: none;
+  color: rgb(86, 86, 86);
+  cursor: pointer;
+  padding: 4px 10px;
+
+  &:hover {
+    color: #171821;
+  }
+}

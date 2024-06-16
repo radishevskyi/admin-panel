@@ -1,8 +1,10 @@
 import {
   faArchive,
   faBook,
+  faChevronRight,
   faCircle,
   faExchange,
+  faFileContract,
   faInbox,
   faLock,
   faPieChart,
@@ -28,7 +30,12 @@ const menuList = [
     icon: faFolderOpen,
     text: 'Адміністративні послуги',
     subMenu: [
-      { id: 1.1, text: 'Зареєстровані' },
+      {
+        id: 1.1,
+        text: 'Зареєстровані',
+        icon: faFolderOpen,
+        iconArrow: faChevronRight,
+      },
       { id: 1.2, text: 'На редагуванні' },
       { id: 1.3, text: 'Мені на розгляд' },
       { id: 1.4, text: 'Розглянуті мною' },
@@ -42,7 +49,12 @@ const menuList = [
     icon: faArrowAltCircleRight,
     text: 'Вхідні',
     subMenu: [
-      { id: 4.1, text: 'Зареєстровані' },
+      {
+        id: 4.1,
+        text: 'Зареєстровані',
+        icon: faFolderOpen,
+        iconArrow: faChevronRight,
+      },
       { id: 4.2, text: 'На редагуванні' },
       { id: 4.3, text: 'Мені на розгляд' },
       { id: 4.4, text: 'Розглянуті мною' },
@@ -54,7 +66,12 @@ const menuList = [
     icon: faArrowAltCircleDown,
     text: 'Внутрішні',
     subMenu: [
-      { id: 5.1, text: 'Зареєстровані' },
+      {
+        id: 5.1,
+        text: 'Зареєстровані',
+        icon: faFolderOpen,
+        iconArrow: faChevronRight,
+      },
       { id: 5.2, text: 'На редагуванні' },
       { id: 5.3, text: 'Мені на розгляд' },
       { id: 5.4, text: 'Повернуті з розгляду' },
@@ -71,7 +88,12 @@ const menuList = [
     icon: faArrowAltCircleLeft,
     text: 'Вихідні',
     subMenu: [
-      { id: 6.1, text: 'Зареєстровані' },
+      {
+        id: 6.1,
+        text: 'Зареєстровані',
+        icon: faFolderOpen,
+        iconArrow: faChevronRight,
+      },
       { id: 6.2, text: 'На редагуванні' },
       { id: 6.3, text: 'Повернуті з реєстрації' },
       { id: 6.4, text: 'Мені на підприсання' },
@@ -87,7 +109,12 @@ const menuList = [
     icon: faUsers,
     text: 'Письмові звернення громадян',
     subMenu: [
-      { id: 7.1, text: 'Зареєстровані' },
+      {
+        id: 7.1,
+        text: 'Зареєстровані',
+        icon: faFolderOpen,
+        iconArrow: faChevronRight,
+      },
       { id: 7.2, text: 'На редагуванні' },
       { id: 7.3, text: 'Мені на розгляд' },
       { id: 7.4, text: 'Розглянуті мною' },
@@ -99,7 +126,12 @@ const menuList = [
     icon: faArrowAltCircleRight,
     text: 'Усні звернення громадян',
     subMenu: [
-      { id: 8.1, text: 'Зареєстровані' },
+      {
+        id: 8.1,
+        text: 'Зареєстровані',
+        icon: faFolderOpen,
+        iconArrow: faChevronRight,
+      },
       { id: 8.2, text: 'На редагуванні' },
       { id: 8.3, text: 'Мені на розгляд' },
       { id: 8.4, text: 'Мені на виконання' },
@@ -112,14 +144,19 @@ const menuList = [
     icon: faFolderOpen,
     text: 'Запити на отримання публічної інформації',
     subMenu: [
-      { id: 9.1, text: 'Зареєстровані' },
+      {
+        id: 9.1,
+        text: 'Зареєстровані',
+        icon: faFolderOpen,
+        iconArrow: faChevronRight,
+      },
       { id: 9.2, text: 'На редагуванні' },
       { id: 9.3, text: 'Мені на розгляд' },
       { id: 9.4, text: 'Розглянуті мною' },
       { id: 9.5, text: 'Повернуті з розгляду' },
     ],
   },
-  { id: 10, icon: faInbox, text: 'Договори' },
+  { id: 10, icon: faFileContract, text: 'Договори' },
   { id: 11, icon: faInbox, text: 'Довіреності' },
   { id: 12, icon: faSuitcase, text: 'Відрядження' },
   { id: 13, icon: faCircle, text: 'СЗЗР' },

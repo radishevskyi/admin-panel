@@ -1,24 +1,24 @@
-import { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
 
-function ListItem({ id, text, icon, isSidebarCollapsed, subMenu }) {
-  const [isOpen, setIsOpen] = useState(false);
-
-  const toggleOpen = () => {
-    setIsOpen(!isOpen);
-  };
-
+function ListItem({
+  text,
+  icon,
+  isSidebarCollapsed,
+  subMenu,
+  onClick,
+  isOpen,
+}) {
   return (
     <li className='list-item-container'>
       <div
         className={`sidebar-list-item ${isSidebarCollapsed ? 'collapsed' : ''}`}
-        onClick={toggleOpen}
+        onClick={onClick}
       >
-        <FontAwesomeIcon icon={icon} className='icons' />
+        <FontAwesomeIcon icon={icon} className='menu-icons' />
         {!isSidebarCollapsed && (
           <>
-            <span className='admin-services'>{text}</span>
+            <span className='menu-item'>{text}</span>
             {subMenu && (
               <FontAwesomeIcon
                 icon={faChevronRight}
@@ -36,7 +36,14 @@ function ListItem({ id, text, icon, isSidebarCollapsed, subMenu }) {
         >
           {subMenu.map((subItem) => (
             <li key={subItem.id} className='sidebar-list-item'>
-              <span className='admin-services'>{subItem.text}</span>
+              <div className='submenu-item'>
+                <FontAwesomeIcon
+                  icon={subItem.icon}
+                  className='submenu-icons'
+                />
+                <span>{subItem.text}</span>
+              </div>
+              <FontAwesomeIcon icon={subItem.iconArrow} className='arrow' />
             </li>
           ))}
         </ul>
