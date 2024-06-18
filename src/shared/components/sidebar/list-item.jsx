@@ -8,6 +8,8 @@ function ListItem({
   subMenu,
   onClick,
   isOpen,
+  openSubItemId,
+  handleSubItemToggle,
 }) {
   return (
     <li className='list-item-container'>
@@ -35,16 +37,16 @@ function ListItem({
           }`}
         >
           {subMenu.map((subItem) => (
-            <li key={subItem.id} className='sidebar-list-item'>
-              <div className='submenu-item'>
-                <FontAwesomeIcon
-                  icon={subItem.icon}
-                  className='submenu-icons'
-                />
-                <span>{subItem.text}</span>
-              </div>
-              <FontAwesomeIcon icon={subItem.iconArrow} className='arrow' />
-            </li>
+            <ListItem
+              key={subItem.id}
+              text={subItem.text}
+              icon={subItem.icon}
+              subMenu={subItem.nestedSubMenu}
+              isSidebarCollapsed={isSidebarCollapsed}
+              onClick={handleSubItemToggle(subItem.id)}
+              isOpen={subItem.id === openSubItemId}
+              handleSubItemToggle={() => {}}
+            />
           ))}
         </ul>
       )}

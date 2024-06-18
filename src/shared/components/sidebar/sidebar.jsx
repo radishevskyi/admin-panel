@@ -5,6 +5,7 @@ import ListItem from './list-item';
 
 function Sidebar() {
   const [openItemId, setOpenItemId] = useState(null);
+  const [openSubItemId, setOpenSubItemId] = useState(null);
   const [isCollapsed, setIsCollapsed] = useState(false);
 
   const handleToggle = (id) => () => {
@@ -12,6 +13,11 @@ function Sidebar() {
       setIsCollapsed(false);
     }
     setOpenItemId(openItemId === id ? null : id);
+    setOpenSubItemId(null);
+  };
+
+  const handleSubItemToggle = (id) => () => {
+    setOpenSubItemId(openSubItemId === id ? null : id);
   };
 
   const handleCollapseToggle = () => {
@@ -32,12 +38,13 @@ function Sidebar() {
             <ListItem
               key={item.id}
               text={item.text}
-              id={item.id}
               icon={item.icon}
               subMenu={item.subMenu}
               isSidebarCollapsed={isCollapsed}
               onClick={handleToggle(item.id)}
               isOpen={openItemId === item.id}
+              openSubItemId={openSubItemId}
+              handleSubItemToggle={handleSubItemToggle}
             />
           ))}
         </ul>

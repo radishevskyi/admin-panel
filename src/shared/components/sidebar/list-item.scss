@@ -50,17 +50,10 @@
   position: relative;
   display: none;
   background-color: rgba(128, 128, 128, 0.11);
+  position: relative;
+  user-select: none;
 
   &:not(.is--sidebar-collapsed).is--open {
     display: block;
   }
-}
-
-.submenu-item {
-  padding-left: 15px;
-}
-
-.submenu-icons {
-  width: 15px;
-  margin-right: 7px;
 }
