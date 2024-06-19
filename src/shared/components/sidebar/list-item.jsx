@@ -10,17 +10,23 @@ function ListItem({
   isOpen,
   openSubItemId,
   handleSubItemToggle,
+  className,
+  indentLevel = 1,
 }) {
+  const indentStyle = {
+    paddingLeft: `${indentLevel * 10}px`,
+  };
   return (
-    <li className='list-item-container'>
+    <li className={`list-item-container ${className || ''}`}>
       <div
         className={`sidebar-list-item ${isSidebarCollapsed ? 'collapsed' : ''}`}
         onClick={onClick}
+        style={indentStyle}
       >
         <FontAwesomeIcon icon={icon} className='menu-icons' />
         {!isSidebarCollapsed && (
           <>
-            <span className='menu-item'>{text}</span>
+            <span>{text}</span>
             {subMenu && (
               <FontAwesomeIcon
                 icon={faChevronRight}
@@ -46,6 +52,7 @@ function ListItem({
               onClick={handleSubItemToggle(subItem.id)}
               isOpen={subItem.id === openSubItemId}
               handleSubItemToggle={() => {}}
+              indentLevel={indentLevel + 1}
             />
           ))}
         </ul>
