@@ -3,7 +3,6 @@
   background-color: #171821;
   box-sizing: border-box;
   height: 100vh;
-  padding: 0;
 
   &.sidebar-collapsed {
     display: flex;
@@ -16,10 +15,11 @@
 .sidebar-list {
   font-size: 13px;
   cursor: pointer;
-  height: calc(100vh - 48px);
+  height: calc(100vh - 70px);
   overflow-y: auto;
   scrollbar-width: thin;
   scrollbar-color: darkgrey #f1f1f1;
+  padding: 5px 0;
 
   &.sidebar-collapsed {
     display: flex;

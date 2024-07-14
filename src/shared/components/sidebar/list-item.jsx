@@ -19,11 +19,18 @@ function ListItem({
   return (
     <li className={`list-item-container ${className || ''}`}>
       <div
-        className={`sidebar-list-item ${isSidebarCollapsed ? 'collapsed' : ''}`}
+        className={`sidebar-list-item ${isOpen ? 'active' : ''} ${
+          isSidebarCollapsed ? 'collapsed' : ''
+        }`}
         onClick={onClick}
         style={indentStyle}
       >
-        <FontAwesomeIcon icon={icon} className='menu-icons' />
+        <FontAwesomeIcon
+          icon={icon}
+          className={`menu-icons ${
+            isSidebarCollapsed ? 'is--sidebar-collapsed' : ''
+          }`}
+        />
         {!isSidebarCollapsed && (
           <>
             <span>{text}</span>
@@ -37,11 +44,7 @@ function ListItem({
         )}
       </div>
       {subMenu && (
-        <ul
-          className={`submenu ${isOpen ? 'is--open' : ''} ${
-            isSidebarCollapsed ? 'is--sidebar-collapsed' : ''
-          }`}
-        >
+        <ul className={`submenu ${isOpen ? 'is--open' : ''}`}>
           {subMenu.map((subItem) => (
             <ListItem
               key={subItem.id}

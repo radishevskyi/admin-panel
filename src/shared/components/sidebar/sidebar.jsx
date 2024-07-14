@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import menuList from '@/shared/constants/menuList';
-import Header from '@/shared/components/sidebar/header';
+import SidebarHeader from '@/shared/components/sidebar/sidebar-header';
 import ListItem from './list-item';
 
 function Sidebar() {
@@ -27,7 +27,7 @@ function Sidebar() {
   return (
     <>
       <div className={`sidebar ${isCollapsed ? 'sidebar-collapsed' : ''}`}>
-        <Header
+        <SidebarHeader
           onToggleSidebar={handleCollapseToggle}
           isCollapsed={isCollapsed}
         />

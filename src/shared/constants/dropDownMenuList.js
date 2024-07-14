@@ -2,12 +2,10 @@ import {
   faFileContract,
   faInbox,
   faSuitcase,
-} from '@fortawesome/free-solid-svg-icons';
-import {
   faArrowAltCircleRight,
   faArrowAltCircleDown,
   faArrowAltCircleLeft,
-} from '@fortawesome/free-regular-svg-icons';
+} from '@fortawesome/free-solid-svg-icons';
 
 const dropDownMenuList = [
   { id: 1, icon: faArrowAltCircleLeft, text: 'Вихідний документ' },

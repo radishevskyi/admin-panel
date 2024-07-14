@@ -12,6 +12,10 @@
   position: relative;
   user-select: none;
 
+  &.active {
+    border-left: 1px solid white;
+  }
+
   &:hover {
     color: white;
     background-color: rgba(255, 255, 255, 0.112);
@@ -40,6 +44,10 @@
 .menu-icons {
   width: 15px;
   padding-right: 10px;
+
+  &.is--sidebar-collapsed {
+    padding-right: 0;
+  }
 }
 
 .submenu {
@@ -50,7 +58,7 @@
   position: relative;
   user-select: none;
 
-  &:not(.is--sidebar-collapsed).is--open {
+  &.is--open {
     display: block;
   }
 }

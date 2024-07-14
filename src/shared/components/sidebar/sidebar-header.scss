@@ -1,4 +1,4 @@
-.header {
+.sidebar-header {
   display: flex;
   justify-content: space-around;
   position: relative;
@@ -75,10 +75,6 @@
   &:hover {
     background-color: rgba(0, 0, 0, 0.09);
   }
-}
-
-.dropdown-menu-item {
-  padding-left: 5px;
 }
 
 .dropdown-menu-arrow {

@@ -1,0 +1,50 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 8px 10px 30px;
+  border-bottom: 1px solid #171821;
+}
+
+.active-desktop {
+  display: flex;
+}
+
+.active-buttons {
+  cursor: pointer;
+  padding: 6px 12px;
+  margin-right: 10px;
+  border: 1px solid #171821;
+  border-radius: 5px;
+  background-color: transparent;
+
+  &.active-id {
+    color: white;
+    background-color: #171821;
+    border: none;
+  }
+}
+
+.account-button {
+  width: 30px;
+  height: 30px;
+  background: transparent;
+  border: 1px solid #171821;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+
+.header-menu {
+}
+
+.header-buttons {
+  background: none;
+  border: none;
+  color: rgb(86, 86, 86);
+  cursor: pointer;
+  padding: 4px 10px;
+
+  &:hover {
+    color: #171821;
+  }
+}

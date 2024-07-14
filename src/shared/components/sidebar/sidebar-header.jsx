@@ -8,7 +8,7 @@ import {
 import { faStar, faFolder } from '@fortawesome/free-regular-svg-icons';
 import dropDownMenuList from '@/shared/constants/dropDownMenuList';
 
-function Header({ onToggleSidebar, isCollapsed }) {
+function SidebarHeader({ onToggleSidebar, isCollapsed }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -16,7 +16,9 @@ function Header({ onToggleSidebar, isCollapsed }) {
   };
 
   return (
-    <header className={`header ${isCollapsed ? 'collapsed-header' : ''}`}>
+    <header
+      className={`sidebar-header ${isCollapsed ? 'collapsed-header' : ''}`}
+    >
       <button className='sidebar-header-buttons'>
         <FontAwesomeIcon icon={faStar} className='icon' />
       </button>
@@ -52,4 +54,4 @@ function Header({ onToggleSidebar, isCollapsed }) {
   );
 }
 
-export default Header;
+export default SidebarHeader;
