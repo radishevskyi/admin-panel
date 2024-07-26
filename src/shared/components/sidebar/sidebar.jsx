@@ -1,16 +1,23 @@
 import React, { useState } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
 import menuList from '@/shared/constants/menuList';
-import styles from '@/shared/components/sidebar/sidebar.module.scss';
-import Header from '@/shared/components/sidebar/header';
+import SidebarHeader from '@/shared/components/sidebar/sidebar-header';
+import ListItem from './list-item';
 
 function Sidebar() {
   const [openItemId, setOpenItemId] = useState(null);
+  const [openSubItemId, setOpenSubItemId] = useState(null);
   const [isCollapsed, setIsCollapsed] = useState(false);
 
-  const handleToggle = (id) => {
+  const handleToggle = (id) => () => {
+    if (isCollapsed) {
+      setIsCollapsed(false);
+    }
     setOpenItemId(openItemId === id ? null : id);
+    setOpenSubItemId(null);
+  };
+
+  const handleSubItemToggle = (id) => () => {
+    setOpenSubItemId(openSubItemId === id ? null : id);
   };
 
   const handleCollapseToggle = () => {
@@ -19,54 +26,26 @@ function Sidebar() {
 
   return (
     <>
-      <div
-        className={`${styles.sidebar} ${isCollapsed ? styles.collapsed : ''}`}
-      >
-        <Header
+      <div className={`sidebar ${isCollapsed ? 'sidebar-collapsed' : ''}`}>
+        <SidebarHeader
           onToggleSidebar={handleCollapseToggle}
           isCollapsed={isCollapsed}
         />
         <ul
-          className={`${styles.navigation} ${
-            isCollapsed ? styles.collapsed : ''
-          }`}
+          className={`sidebar-list ${isCollapsed ? 'sidebar-collapsed' : ''}`}
         >
           {menuList.map((item) => (
-            <React.Fragment key={item.id}>
-              <li
-                className={`${styles.sidebarList} ${
-                  isCollapsed ? styles.collapsed : ''
-                }`}
-                onClick={() => handleToggle(item.id)}
-              >
-                <FontAwesomeIcon icon={item.icon} className={styles.icons} />
-                {!isCollapsed && (
-                  <>
-                    <span className={styles.adminServices}>{item.text}</span>
-                    {item.subMenu && (
-                      <FontAwesomeIcon
-                        icon={faChevronRight}
-                        className={`${styles.arrow} ${
-                          openItemId === item.id ? styles.open : ''
-                        }`}
-                        onClick={() => handleToggle(item.id)}
-                      />
-                    )}
-                  </>
-                )}
-              </li>
-              {item.subMenu && openItemId === item.id && !isCollapsed && (
-                <ul className={styles.subMenu}>
-                  {item.subMenu.map((subItem) => (
-                    <li key={subItem.id} className={styles.sidebarList}>
-                      <span className={styles.adminServices}>
-                        {subItem.text}
-                      </span>
-                    </li>
-                  ))}
-                </ul>
-              )}
-            </React.Fragment>
+            <ListItem
+              key={item.id}
+              text={item.text}
+              icon={item.icon}
+              subMenu={item.subMenu}
+              isSidebarCollapsed={isCollapsed}
+              onClick={handleToggle(item.id)}
+              isOpen={openItemId === item.id}
+              openSubItemId={openSubItemId}
+              handleSubItemToggle={handleSubItemToggle}
+            />
           ))}
         </ul>
       </div>

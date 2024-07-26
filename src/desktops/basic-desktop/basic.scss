@@ -1,0 +1,108 @@
+.button-refresh {
+  padding: 5px;
+  margin: 8px;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  font-size: 14px;
+
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.129);
+  }
+}
+
+.refresh-icon {
+  font-size: 14px;
+  margin-right: 5px;
+  width: 14px;
+  height: 14px;
+}
+
+.desktop-container {
+  display: flex;
+  align-items: flex-start;
+  height: calc(100vh - 110px);
+  gap: 8px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: darkgrey #f1f1f1;
+  padding: 0 0 5px 8px;
+  position: relative;
+  flex-wrap: wrap;
+}
+
+.desktop-item {
+  width: calc(50% - 8px);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.desktop-block {
+  display: flex;
+  flex-direction: column;
+  height: 300px;
+}
+
+.desktop-block-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #cacaca;
+  padding: 3px 5px;
+  font-size: 14px;
+}
+
+.block-icon {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  color: white;
+  font-size: 14px;
+}
+
+.desktop-table {
+  overflow-x: auto;
+  scrollbar-width: thin;
+  height: 100%;
+  font-size: 14px;
+}
+
+.table-header {
+  background-color: #cacaca;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  height: 30px;
+}
+
+.table-header-items {
+  white-space: nowrap;
+  padding: 0 30px 0 10px;
+
+  &:hover {
+    // sort-circle
+  }
+}
+
+.item-buttons {
+  padding: 5px;
+  margin: 5px 8px;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  font-size: 14px;
+  color: gray;
+
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.129);
+  }
+}
+
+.inner-block-item {
+  background-color: #cacaca;
+  padding: 3px;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+}

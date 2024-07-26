@@ -1,0 +1,64 @@
+.list-item-container {
+  position: relative;
+}
+
+.sidebar-list-item {
+  display: flex;
+  align-items: center;
+  color: rgba(255, 255, 255, 0.797);
+  line-height: 1.5;
+  padding: 5px 10px;
+  letter-spacing: 0.6px;
+  position: relative;
+  user-select: none;
+
+  &.active {
+    border-left: 1px solid white;
+  }
+
+  &:hover {
+    color: white;
+    background-color: rgba(255, 255, 255, 0.112);
+  }
+
+  &.collapsed {
+    padding: 10px;
+
+    &:hover {
+      color: #95f4ff;
+      background: none;
+    }
+  }
+}
+
+.arrow {
+  font-size: 10px;
+  margin-left: auto;
+  transition: transform 0.2s;
+
+  &.open {
+    transform: rotate(90deg);
+  }
+}
+
+.menu-icons {
+  width: 15px;
+  padding-right: 10px;
+
+  &.is--sidebar-collapsed {
+    padding-right: 0;
+  }
+}
+
+.submenu {
+  list-style-type: none;
+  position: relative;
+  display: none;
+  background-color: rgba(128, 128, 128, 0.11);
+  position: relative;
+  user-select: none;
+
+  &.is--open {
+    display: block;
+  }
+}
