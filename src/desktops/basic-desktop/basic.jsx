@@ -1,9 +1,12 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faCheck,
+  faChevronCircleUp,
+  faExpandArrowsAlt,
   faFilter,
   faPlus,
   faSyncAlt,
+  faTimesCircle,
 } from '@fortawesome/free-solid-svg-icons';
 import ReusableTable from './reusable-table';
 import { column1, column2, column3, column4, column5 } from './table.data';
@@ -18,7 +21,20 @@ function Basic() {
       <div className='desktop-container'>
         <div className='desktop-item'>
           <div className='desktop-block'>
-            <div className='desktop-block-item'>Мені на розгляд</div>
+            <div className='desktop-block-item'>
+              <span>Мені на розгляд</span>
+              <div>
+                <button className='block-icon'>
+                  <FontAwesomeIcon icon={faChevronCircleUp} />
+                </button>
+                <button className='block-icon'>
+                  <FontAwesomeIcon icon={faExpandArrowsAlt} />
+                </button>
+                <button className='block-icon'>
+                  <FontAwesomeIcon icon={faTimesCircle} />
+                </button>
+              </div>
+            </div>
             <div>
               <button className='item-buttons'>
                 <FontAwesomeIcon icon={faSyncAlt} />
@@ -38,7 +54,20 @@ function Basic() {
             </div>
           </div>
           <div className='desktop-block'>
-            <div className='desktop-block-item'>Мені на виконання</div>
+            <div className='desktop-block-item'>
+              <span>Мені на виконання</span>
+              <div>
+                <button className='block-icon'>
+                  <FontAwesomeIcon icon={faChevronCircleUp} />
+                </button>
+                <button className='block-icon'>
+                  <FontAwesomeIcon icon={faExpandArrowsAlt} />
+                </button>
+                <button className='block-icon'>
+                  <FontAwesomeIcon icon={faTimesCircle} />
+                </button>
+              </div>
+            </div>
             <div>
               <button className='item-buttons'>
                 <FontAwesomeIcon icon={faSyncAlt} />
@@ -52,7 +81,20 @@ function Basic() {
             </div>
           </div>
           <div className='desktop-block'>
-            <div className='desktop-block-item'>Контроль</div>
+            <div className='desktop-block-item'>
+              <span>Контроль</span>
+              <div>
+                <button className='block-icon'>
+                  <FontAwesomeIcon icon={faChevronCircleUp} />
+                </button>
+                <button className='block-icon'>
+                  <FontAwesomeIcon icon={faExpandArrowsAlt} />
+                </button>
+                <button className='block-icon'>
+                  <FontAwesomeIcon icon={faTimesCircle} />
+                </button>
+              </div>
+            </div>
             <div>
               <button className='item-buttons'>
                 <FontAwesomeIcon icon={faSyncAlt} />
@@ -68,7 +110,20 @@ function Basic() {
         </div>
         <div className='desktop-item'>
           <div className='desktop-block'>
-            <div className='desktop-block-item'>Мені на підпис</div>
+            <div className='desktop-block-item'>
+              <span>Мені на підпис</span>
+              <div>
+                <button className='block-icon'>
+                  <FontAwesomeIcon icon={faChevronCircleUp} />
+                </button>
+                <button className='block-icon'>
+                  <FontAwesomeIcon icon={faExpandArrowsAlt} />
+                </button>
+                <button className='block-icon'>
+                  <FontAwesomeIcon icon={faTimesCircle} />
+                </button>
+              </div>
+            </div>
             <div>
               <button className='item-buttons'>
                 <FontAwesomeIcon icon={faSyncAlt} />
@@ -85,7 +140,20 @@ function Basic() {
             </div>
           </div>
           <div className='desktop-block'>
-            <div className='desktop-block-item'>Мені на візування</div>
+            <div className='desktop-block-item'>
+              <span>Мені на візування</span>
+              <div>
+                <button className='block-icon'>
+                  <FontAwesomeIcon icon={faChevronCircleUp} />
+                </button>
+                <button className='block-icon'>
+                  <FontAwesomeIcon icon={faExpandArrowsAlt} />
+                </button>
+                <button className='block-icon'>
+                  <FontAwesomeIcon icon={faTimesCircle} />
+                </button>
+              </div>
+            </div>
             <div>
               <button className='item-buttons'>
                 <FontAwesomeIcon icon={faSyncAlt} />
@@ -102,7 +170,20 @@ function Basic() {
             </div>
           </div>
           <div className='desktop-block'>
-            <div className='desktop-block-item'>Для інформації</div>
+            <div className='desktop-block-item'>
+              <span>Для інформації</span>
+              <div>
+                <button className='block-icon'>
+                  <FontAwesomeIcon icon={faChevronCircleUp} />
+                </button>
+                <button className='block-icon'>
+                  <FontAwesomeIcon icon={faExpandArrowsAlt} />
+                </button>
+                <button className='block-icon'>
+                  <FontAwesomeIcon icon={faTimesCircle} />
+                </button>
+              </div>
+            </div>
             <div>
               <button className='item-buttons'>
                 <FontAwesomeIcon icon={faSyncAlt} />
