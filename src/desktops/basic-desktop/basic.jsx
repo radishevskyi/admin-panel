@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import {
   faCheck,
   faChevronCircleUp,
@@ -11,35 +11,16 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import ReusableTable from './reusable-table';
 import { column1, column2, column3, column4, column5 } from './table.data';
+import { generateTableData } from './basic-desktop.utils';
 
 function Basic() {
-  const [tableData, setTableData] = useState({
-    data1: [],
-    data2: [],
-    data3: [],
-    data4: [],
-    data5: [],
+  const [tableData] = useState({
+    data1: generateTableData(3, column1.length),
+    data2: generateTableData(3, column2.length),
+    data3: generateTableData(3, column3.length),
+    data4: generateTableData(3, column4.length),
+    data5: generateTableData(3, column5.length),
   });
-
-  useEffect(() => {
-    const generateTableData = (rows, columns) => {
-      return Array.from({ length: rows }, (_, rowIndex) => {
-        return Array.from({ length: columns }, (_, colIndex) => {
-          const id = `${rowIndex}-${colIndex}`;
-          const text = `Ряд ${rowIndex + 1} Кол ${colIndex + 1}`;
-          return { id, text };
-        });
-      });
-    };
-
-    setTableData({
-      data1: generateTableData(3, column1.length),
-      data2: generateTableData(3, column2.length),
-      data3: generateTableData(3, column3.length),
-      data4: generateTableData(3, column4.length),
-      data5: generateTableData(3, column5.length),
-    });
-  }, []);
 
   return (
     <>
