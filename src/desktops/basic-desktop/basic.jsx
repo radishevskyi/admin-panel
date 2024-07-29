@@ -1,4 +1,5 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { useState } from 'react';
 import {
   faCheck,
   faChevronCircleUp,
@@ -10,8 +11,17 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import ReusableTable from './reusable-table';
 import { column1, column2, column3, column4, column5 } from './table.data';
+import { generateTableData } from './basic-desktop.utils';
 
 function Basic() {
+  const [tableData] = useState({
+    data1: generateTableData(3, column1.length),
+    data2: generateTableData(3, column2.length),
+    data3: generateTableData(3, column3.length),
+    data4: generateTableData(3, column4.length),
+    data5: generateTableData(3, column5.length),
+  });
+
   return (
     <>
       <button className='button-refresh'>
@@ -50,7 +60,7 @@ function Basic() {
               </button>
             </div>
             <div className='desktop-table'>
-              <ReusableTable columns={column1} data={[]} />
+              <ReusableTable columns={column1} data={tableData.data1} />
             </div>
           </div>
           <div className='desktop-block'>
@@ -77,7 +87,7 @@ function Basic() {
               </button>
             </div>
             <div className='desktop-table'>
-              <ReusableTable columns={column2} data={[]} />
+              <ReusableTable columns={column2} data={tableData.data2} />
             </div>
           </div>
           <div className='desktop-block'>
@@ -104,7 +114,7 @@ function Basic() {
               </button>
             </div>
             <div className='desktop-table'>
-              <ReusableTable columns={column3} data={[]} />
+              <ReusableTable columns={column3} data={tableData.data3} />
             </div>
           </div>
         </div>
@@ -136,7 +146,7 @@ function Basic() {
               </button>
             </div>
             <div className='desktop-table'>
-              <ReusableTable columns={column4} data={[]} />
+              <ReusableTable columns={column4} data={tableData.data4} />
             </div>
           </div>
           <div className='desktop-block'>
@@ -166,7 +176,7 @@ function Basic() {
               </button>
             </div>
             <div className='desktop-table'>
-              <ReusableTable columns={column4} data={[]} />
+              <ReusableTable columns={column4} data={tableData.data5} />
             </div>
           </div>
           <div className='desktop-block'>
@@ -196,7 +206,7 @@ function Basic() {
               </button>
             </div>
             <div className='desktop-table'>
-              <ReusableTable columns={column5} data={[]} />
+              <ReusableTable columns={column5} data={tableData.data5} />
             </div>
           </div>
         </div>

@@ -5,18 +5,20 @@ const ReusableTable = ({ columns, data }) => {
     <table>
       <thead>
         <tr className='table-header'>
-          {columns.map((col, index) => (
-            <th className='table-header-items' key={index}>
-              {col}
+          {columns.map((col) => (
+            <th className='table-header-items' key={col.id}>
+              {col.text}
             </th>
           ))}
         </tr>
       </thead>
       <tbody>
-        {data.map((row, rowIndex) => (
-          <tr key={rowIndex}>
-            {columns.map((col, colIndex) => (
-              <td key={colIndex}>{row[col]}</td>
+        {data.map((row) => (
+          <tr className='table-row' key={row.id}>
+            {row.map((colData) => (
+              <td className='table-header-items' key={colData.id}>
+                {colData.text}
+              </td>
             ))}
           </tr>
         ))}
