@@ -2,8 +2,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowUp } from '@fortawesome/free-solid-svg-icons';
 
 const column1 = [
-  { id: 9, text: <input type='checkbox' /> },
-  { id: 10, text: <FontAwesomeIcon icon={faArrowUp} /> },
   { id: 1, text: 'Реєстраційний номер' },
   { id: 2, text: 'Реєстраційна дата' },
   { id: 3, text: 'На розгляді' },
@@ -15,7 +13,6 @@ const column1 = [
 ];
 
 const column2 = [
-  { id: 10, text: <FontAwesomeIcon icon={faArrowUp} /> },
   { id: 1, text: 'Виконавець' },
   { id: 2, text: 'Роль' },
   { id: 3, text: 'Текст пункту' },
@@ -28,7 +25,6 @@ const column2 = [
 ];
 
 const column3 = [
-  { id: 7, text: <FontAwesomeIcon icon={faArrowUp} /> },
   { id: 1, text: 'Підписант' },
   { id: 2, text: 'Текст завдання' },
   { id: 3, text: 'Строк' },
@@ -38,8 +34,6 @@ const column3 = [
 ];
 
 const column4 = [
-  { id: 9, text: <input type='checkbox' /> },
-  { id: 10, text: <FontAwesomeIcon icon={faArrowUp} /> },
   { id: 1, text: 'Кому' },
   { id: 2, text: 'Вид' },
   { id: 3, text: 'Системний номер' },
@@ -51,7 +45,6 @@ const column4 = [
 ];
 
 const column5 = [
-  { id: 10, text: <FontAwesomeIcon icon={faArrowUp} /> },
   { id: 1, text: 'Виконавець' },
   { id: 2, text: 'Роль' },
   { id: 3, text: 'Текст пункту' },

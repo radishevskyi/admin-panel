@@ -41,7 +41,13 @@
 .desktop-block {
   display: flex;
   flex-direction: column;
+  overflow: hidden;
+  transition: height 0.5s ease;
   height: 300px;
+
+  &.collapsed {
+    height: 30px;
+  }
 }
 
 .desktop-block-item {
@@ -59,10 +65,12 @@
   cursor: pointer;
   color: white;
   font-size: 14px;
+  padding: 3px 4px;
 }
 
 .desktop-table {
   overflow-x: auto;
+  overflow-y: hidden;
   scrollbar-width: thin;
   height: 100%;
   font-size: 14px;
