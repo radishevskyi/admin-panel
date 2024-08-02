@@ -22,13 +22,12 @@
   display: flex;
   align-items: flex-start;
   height: calc(100vh - 110px);
-  gap: 8px;
   overflow-y: auto;
   scrollbar-width: thin;
   scrollbar-color: darkgrey #f1f1f1;
   padding: 0 0 5px 8px;
-  position: relative;
   flex-wrap: wrap;
+  gap: 8px;
 }
 
 .desktop-item {
@@ -39,8 +38,6 @@
 }
 
 .desktop-block {
-  display: flex;
-  flex-direction: column;
   overflow: hidden;
   transition: height 0.5s ease;
   height: 300px;
@@ -72,7 +69,7 @@
   overflow-x: auto;
   overflow-y: hidden;
   scrollbar-width: thin;
-  height: 100%;
+  min-height: calc(100% - 66px);
   font-size: 14px;
 }
 
