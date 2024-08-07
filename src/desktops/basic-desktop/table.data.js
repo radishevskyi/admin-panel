@@ -1,3 +1,10 @@
+import {
+  faCheck,
+  faFilter,
+  faPlus,
+  faSyncAlt,
+} from '@fortawesome/free-solid-svg-icons';
+
 const column1 = [
   { id: 1, text: 'Реєстраційний номер' },
   { id: 2, text: 'Реєстраційна дата' },
@@ -53,4 +60,10 @@ const column5 = [
   { id: 9, text: 'Зміст' },
 ];
 
-export { column1, column2, column3, column4, column5 };
+const iconSets = {
+  icons1: [faSyncAlt, faCheck, faPlus, faFilter],
+  icons2: [faSyncAlt, faFilter],
+  icons3: [faSyncAlt, faCheck, faFilter],
+};
+
+export { column1, column2, column3, column4, column5, iconSets };

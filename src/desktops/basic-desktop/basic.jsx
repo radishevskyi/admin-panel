@@ -1,7 +1,14 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useState } from 'react';
 import { faSyncAlt } from '@fortawesome/free-solid-svg-icons';
-import { column1, column2, column3, column4, column5 } from './table.data';
+import {
+  column1,
+  column2,
+  column3,
+  column4,
+  column5,
+  iconSets,
+} from './table.data';
 import { generateTableData } from './basic-desktop.utils';
 import TableBlock from './table-block';
 
@@ -14,6 +21,7 @@ function Basic() {
       data: generateTableData(3, column1.length),
       isCollapsed: false,
       isVisible: true,
+      icons: iconSets.icons1,
     },
     {
       key: 'table2',
@@ -22,6 +30,7 @@ function Basic() {
       data: generateTableData(3, column2.length),
       isCollapsed: false,
       isVisible: true,
+      icons: iconSets.icons2,
     },
     {
       key: 'table3',
@@ -30,6 +39,7 @@ function Basic() {
       data: generateTableData(3, column3.length),
       isCollapsed: false,
       isVisible: true,
+      icons: iconSets.icons2,
     },
     {
       key: 'table4',
@@ -38,6 +48,7 @@ function Basic() {
       data: generateTableData(3, column4.length),
       isCollapsed: false,
       isVisible: true,
+      icons: iconSets.icons3,
     },
     {
       key: 'table5',
@@ -46,6 +57,7 @@ function Basic() {
       data: generateTableData(3, column5.length),
       isCollapsed: false,
       isVisible: true,
+      icons: iconSets.icons3,
     },
     {
       key: 'table6',
@@ -54,6 +66,7 @@ function Basic() {
       data: generateTableData(3, column5.length),
       isCollapsed: false,
       isVisible: true,
+      icons: iconSets.icons3,
     },
   ]);
 
@@ -93,6 +106,7 @@ function Basic() {
               isVisible={table.isVisible}
               onToggleCollapse={() => toggleCollapse(table.key)}
               onClose={() => closeTable(table.key)}
+              icons={table.icons}
             />
           ))}
         </div>
@@ -107,6 +121,7 @@ function Basic() {
               isVisible={table.isVisible}
               onToggleCollapse={() => toggleCollapse(table.key)}
               onClose={() => closeTable(table.key)}
+              icons={table.icons}
             />
           ))}
         </div>

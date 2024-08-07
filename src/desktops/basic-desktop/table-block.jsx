@@ -1,12 +1,8 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
-  faCheck,
   faChevronCircleDown,
   faChevronCircleUp,
   faExpandArrowsAlt,
-  faFilter,
-  faPlus,
-  faSyncAlt,
   faTimesCircle,
 } from '@fortawesome/free-solid-svg-icons';
 import ReusableTable from './reusable-table';
@@ -20,6 +16,7 @@ function TableBlock({
   isVisible,
   onToggleCollapse,
   onClose,
+  icons,
 }) {
   const [isClosing, setIsClosing] = useState(false);
 
@@ -57,18 +54,11 @@ function TableBlock({
       {!isCollapsed && (
         <>
           <div>
-            <button className='item-buttons'>
-              <FontAwesomeIcon icon={faSyncAlt} />
-            </button>
-            <button className='item-buttons'>
-              <FontAwesomeIcon icon={faCheck} />
-            </button>
-            <button className='item-buttons'>
-              <FontAwesomeIcon icon={faPlus} />
-            </button>
-            <button className='item-buttons'>
-              <FontAwesomeIcon icon={faFilter} />
-            </button>
+            {icons.map((icon, index) => (
+              <button className='item-buttons' key={index}>
+                <FontAwesomeIcon icon={icon} />
+              </button>
+            ))}
           </div>
           <div className='desktop-table'>
             <ReusableTable columns={columns} data={data} />
