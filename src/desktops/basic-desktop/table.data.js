@@ -1,6 +1,3 @@
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-// import { faArrowUp } from '@fortawesome/free-solid-svg-icons';
-
 const column1 = [
   { id: 1, text: 'Реєстраційний номер' },
   { id: 2, text: 'Реєстраційна дата' },

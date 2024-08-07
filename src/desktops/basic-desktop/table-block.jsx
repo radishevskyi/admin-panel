@@ -10,6 +10,7 @@ import {
   faTimesCircle,
 } from '@fortawesome/free-solid-svg-icons';
 import ReusableTable from './reusable-table';
+import { useState } from 'react';
 
 function TableBlock({
   title,
@@ -20,10 +21,23 @@ function TableBlock({
   onToggleCollapse,
   onClose,
 }) {
+  const [isClosing, setIsClosing] = useState(false);
+
+  const handleClose = () => {
+    setIsClosing(true);
+    setTimeout(() => {
+      onClose();
+    }, 500);
+  };
+
   if (!isVisible) return null;
 
   return (
-    <div className={`desktop-block ${isCollapsed ? 'collapsed' : ''}`}>
+    <div
+      className={`desktop-block ${isCollapsed ? 'collapsed' : ''} ${
+        isClosing ? 'closing' : ''
+      }`}
+    >
       <div className='desktop-block-item'>
         <span>{title}</span>
         <div>
@@ -35,7 +49,7 @@ function TableBlock({
           <button className='block-icon'>
             <FontAwesomeIcon icon={faExpandArrowsAlt} />
           </button>
-          <button className='block-icon' onClick={onClose}>
+          <button className='block-icon' onClick={handleClose}>
             <FontAwesomeIcon icon={faTimesCircle} />
           </button>
         </div>

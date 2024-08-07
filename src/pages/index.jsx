@@ -2,7 +2,7 @@ import { useState } from 'react';
 import Header from '@/shared/components/header/header';
 import Head from 'next/head';
 import Basic from '@/desktops/basic-desktop/basic';
-import Content2 from '@/desktops/basic-desktop/content2';
+import Content2 from '@/desktops/content/content2';
 
 const desktops = [
   {
