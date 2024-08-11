@@ -10,7 +10,7 @@ import { useState } from 'react';
 
 function TableBlock({
   title,
-  columns,
+  headerColumns,
   data,
   isCollapsed,
   isVisible,
@@ -61,7 +61,7 @@ function TableBlock({
             ))}
           </div>
           <div className='desktop-table'>
-            <ReusableTable columns={columns} data={data} />
+            <ReusableTable headerColumns={headerColumns} data={data} />
           </div>
         </>
       )}

@@ -38,7 +38,7 @@ function Basic() {
             <TableBlock
               key={table.key}
               title={table.title}
-              columns={table.columns}
+              headerColumns={table.columns}
               data={table.data}
               isCollapsed={table.isCollapsed}
               isVisible={table.isVisible}
@@ -53,7 +53,7 @@ function Basic() {
             <TableBlock
               key={table.key}
               title={table.title}
-              columns={table.columns}
+              headerColumns={table.columns}
               data={table.data}
               isCollapsed={table.isCollapsed}
               isVisible={table.isVisible}
