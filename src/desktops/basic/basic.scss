@@ -1,0 +1,40 @@
+@import './table-block.scss';
+
+.button-refresh {
+  padding: 5px;
+  margin: 8px;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  font-size: 14px;
+
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.129);
+  }
+}
+
+.refresh-icon {
+  font-size: 14px;
+  margin-right: 5px;
+  width: 14px;
+  height: 14px;
+}
+
+.desktop-container {
+  display: flex;
+  align-items: flex-start;
+  height: calc(100vh - 110px);
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: darkgrey #f1f1f1;
+  padding: 0 0 5px 8px;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.desktop-item {
+  width: calc(50% - 8px);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}

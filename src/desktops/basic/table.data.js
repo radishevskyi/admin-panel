@@ -1,9 +1,12 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowUp } from '@fortawesome/free-solid-svg-icons';
+import {
+  faCheck,
+  faFilter,
+  faPlus,
+  faSyncAlt,
+} from '@fortawesome/free-solid-svg-icons';
+import { generateTableData } from './basic.utils';
 
 const column1 = [
-  { id: 9, text: <input type='checkbox' /> },
-  { id: 10, text: <FontAwesomeIcon icon={faArrowUp} /> },
   { id: 1, text: 'Реєстраційний номер' },
   { id: 2, text: 'Реєстраційна дата' },
   { id: 3, text: 'На розгляді' },
@@ -15,7 +18,6 @@ const column1 = [
 ];
 
 const column2 = [
-  { id: 10, text: <FontAwesomeIcon icon={faArrowUp} /> },
   { id: 1, text: 'Виконавець' },
   { id: 2, text: 'Роль' },
   { id: 3, text: 'Текст пункту' },
@@ -28,7 +30,6 @@ const column2 = [
 ];
 
 const column3 = [
-  { id: 7, text: <FontAwesomeIcon icon={faArrowUp} /> },
   { id: 1, text: 'Підписант' },
   { id: 2, text: 'Текст завдання' },
   { id: 3, text: 'Строк' },
@@ -38,8 +39,6 @@ const column3 = [
 ];
 
 const column4 = [
-  { id: 9, text: <input type='checkbox' /> },
-  { id: 10, text: <FontAwesomeIcon icon={faArrowUp} /> },
   { id: 1, text: 'Кому' },
   { id: 2, text: 'Вид' },
   { id: 3, text: 'Системний номер' },
@@ -51,7 +50,6 @@ const column4 = [
 ];
 
 const column5 = [
-  { id: 10, text: <FontAwesomeIcon icon={faArrowUp} /> },
   { id: 1, text: 'Виконавець' },
   { id: 2, text: 'Роль' },
   { id: 3, text: 'Текст пункту' },
@@ -63,4 +61,67 @@ const column5 = [
   { id: 9, text: 'Зміст' },
 ];
 
-export { column1, column2, column3, column4, column5 };
+const iconSets = {
+  icons1: [faSyncAlt, faCheck, faPlus, faFilter],
+  icons2: [faSyncAlt, faFilter],
+  icons3: [faSyncAlt, faCheck, faFilter],
+};
+
+export { column1, column2, column3, column4, column5, iconSets };
+
+export const initialState = [
+  {
+    key: 'table1',
+    title: 'Мені на розгляд',
+    columns: column1,
+    data: generateTableData(3, column1.length),
+    isCollapsed: false,
+    isVisible: true,
+    icons: iconSets.icons1,
+  },
+  {
+    key: 'table2',
+    title: 'Мені на виконання',
+    columns: column2,
+    data: generateTableData(3, column2.length),
+    isCollapsed: false,
+    isVisible: true,
+    icons: iconSets.icons2,
+  },
+  {
+    key: 'table3',
+    title: 'Контроль',
+    columns: column3,
+    data: generateTableData(3, column3.length),
+    isCollapsed: false,
+    isVisible: true,
+    icons: iconSets.icons2,
+  },
+  {
+    key: 'table4',
+    title: 'Мені на підпис',
+    columns: column4,
+    data: generateTableData(3, column4.length),
+    isCollapsed: false,
+    isVisible: true,
+    icons: iconSets.icons3,
+  },
+  {
+    key: 'table5',
+    title: 'Мені на візування',
+    columns: column5,
+    data: generateTableData(3, column5.length),
+    isCollapsed: false,
+    isVisible: true,
+    icons: iconSets.icons3,
+  },
+  {
+    key: 'table6',
+    title: 'Для інформації',
+    columns: column5,
+    data: generateTableData(3, column5.length),
+    isCollapsed: false,
+    isVisible: true,
+    icons: iconSets.icons3,
+  },
+];
