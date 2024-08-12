@@ -1,9 +1,8 @@
+import { faSyncAlt } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useState } from 'react';
-import { faSyncAlt } from '@fortawesome/free-solid-svg-icons';
-
-import { initialState } from './basic.utils';
 import TableBlock from './table-block';
+import { initialState } from './table.data';
 
 function Basic() {
   const [tables, setTables] = useState(initialState);

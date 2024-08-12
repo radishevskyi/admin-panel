@@ -4,7 +4,7 @@ import Head from 'next/head';
 import Basic from '@/desktops/basic/basic';
 import Content2 from '@/desktops/content/content2';
 
-const desktops = [
+const initialDesktops = [
   {
     id: 1,
     title: 'Базовий робочий стіл',
@@ -18,6 +18,7 @@ const desktops = [
 ];
 
 function Index() {
+  const [desktops, setDesktops] = useState(initialDesktops);
   const [activeDesktop, setActiveDesktop] = useState(desktops[0]);
 
   return (
