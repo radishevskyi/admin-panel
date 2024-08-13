@@ -7,6 +7,7 @@ function ListItem({
   isSidebarCollapsed,
   subMenu,
   onClick,
+  onDoubleClick,
   isOpen,
   openSubItemId,
   handleSubItemToggle,
@@ -23,6 +24,7 @@ function ListItem({
           isSidebarCollapsed ? 'collapsed' : ''
         }`}
         onClick={onClick}
+        onDoubleClick={onDoubleClick}
         style={indentStyle}
       >
         <FontAwesomeIcon
@@ -53,6 +55,7 @@ function ListItem({
               subMenu={subItem.nestedSubMenu}
               isSidebarCollapsed={isSidebarCollapsed}
               onClick={handleSubItemToggle(subItem.id)}
+              onDoubleClick={onDoubleClick}
               isOpen={subItem.id === openSubItemId}
               handleSubItemToggle={() => {}}
               indentLevel={indentLevel + 1}

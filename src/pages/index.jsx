@@ -1,25 +1,11 @@
-import { useState } from 'react';
+import { useContext } from 'react';
 import Header from '@/shared/components/header/header';
 import Head from 'next/head';
-import Basic from '@/desktops/basic/basic';
-import Content2 from '@/desktops/content/content2';
-
-const initialDesktops = [
-  {
-    id: 1,
-    title: 'Базовий робочий стіл',
-    content: <Basic />,
-  },
-  {
-    id: 2,
-    title: 'Другий робочий стіл',
-    content: <Content2 />,
-  },
-];
+import { DesktopContext } from '@/shared/context/context';
 
 function Index() {
-  const [desktops, setDesktops] = useState(initialDesktops);
-  const [activeDesktop, setActiveDesktop] = useState(desktops[0]);
+  const { desktops, activeDesktopItem, setActiveDesktopItem } =
+    useContext(DesktopContext);
 
   return (
     <>
@@ -29,11 +15,11 @@ function Index() {
       </Head>
       <main>
         <Header
-          activeDesktopId={activeDesktop.id}
+          activeDesktopId={activeDesktopItem?.id}
           desktops={desktops}
-          setActiveDesktop={setActiveDesktop}
+          setActiveDesktop={setActiveDesktopItem}
         />
-        {activeDesktop.content}
+        {activeDesktopItem?.content}
       </main>
     </>
   );
