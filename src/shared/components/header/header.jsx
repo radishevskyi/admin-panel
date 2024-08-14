@@ -1,7 +1,7 @@
 import { DesktopContext } from '@/shared/context/context';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBell, faMessage, faUser } from '@fortawesome/free-regular-svg-icons';
 import { faDesktop, faSearch } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useContext } from 'react';
 
 function Header() {
@@ -14,6 +14,7 @@ function Header() {
           <button className='account-button'>{desktops.length}</button>
           {desktops.map((desktop) => (
             <button
+              key={desktop.id}
               className={`active-buttons ${
                 desktop.id === activeDesktopItem.id ? 'active-id' : ''
               }`}

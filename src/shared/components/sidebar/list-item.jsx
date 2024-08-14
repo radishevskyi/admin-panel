@@ -37,12 +37,14 @@ function ListItem({
         }
         style={indentStyle}
       >
-        <FontAwesomeIcon
-          icon={icon}
-          className={`menu-icons ${
-            isSidebarCollapsed ? 'is--sidebar-collapsed' : ''
-          }`}
-        />
+        {icon && (
+          <FontAwesomeIcon
+            icon={icon}
+            className={`menu-icons ${
+              isSidebarCollapsed ? 'is--sidebar-collapsed' : ''
+            }`}
+          />
+        )}
         {!isSidebarCollapsed && (
           <>
             <span>{text}</span>

@@ -13,10 +13,10 @@ const ReusableTable = ({ headerColumns, data }) => {
         </tr>
       </thead>
       <tbody>
-        {data.map((row) => (
-          <tr className='table-row' key={row.id}>
-            {row.map((colData) => (
-              <td className='table-header-items' key={colData.id}>
+        {data.map((row, rowIndex) => (
+          <tr className='table-row' key={rowIndex}>
+            {row.map((colData, colIndex) => (
+              <td className='table-header-items' key={colIndex}>
                 {colData.text}
               </td>
             ))}
