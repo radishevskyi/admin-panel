@@ -1,8 +1,12 @@
+import { DesktopContext } from '@/shared/context/context';
 import { faBell, faMessage, faUser } from '@fortawesome/free-regular-svg-icons';
 import { faDesktop, faSearch } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { useContext } from 'react';
 
-function Header({ desktops, setActiveDesktop, activeDesktopId }) {
+function Header() {
+  const { desktops, activeDesktopItem, setActiveDesktopItem } =
+    useContext(DesktopContext);
   return (
     <header>
       <div className='header'>
@@ -11,9 +15,9 @@ function Header({ desktops, setActiveDesktop, activeDesktopId }) {
           {desktops.map((desktop) => (
             <button
               className={`active-buttons ${
-                desktop.id === activeDesktopId ? 'active-id' : ''
+                desktop.id === activeDesktopItem.id ? 'active-id' : ''
               }`}
-              onClick={() => setActiveDesktop(desktop)}
+              onClick={() => setActiveDesktopItem(desktop)}
             >
               {desktop.title}
             </button>

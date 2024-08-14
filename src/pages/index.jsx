@@ -4,8 +4,7 @@ import Head from 'next/head';
 import { DesktopContext } from '@/shared/context/context';
 
 function Index() {
-  const { desktops, activeDesktopItem, setActiveDesktopItem } =
-    useContext(DesktopContext);
+  const { activeDesktopItem } = useContext(DesktopContext);
 
   return (
     <>
@@ -14,11 +13,7 @@ function Index() {
         <meta name='description' content='content' />
       </Head>
       <main>
-        <Header
-          activeDesktopId={activeDesktopItem?.id}
-          desktops={desktops}
-          setActiveDesktop={setActiveDesktopItem}
-        />
+        <Header />
         {activeDesktopItem?.content}
       </main>
     </>

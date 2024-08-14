@@ -23,6 +23,8 @@ import {
   faListAlt,
   faFileText,
 } from '@fortawesome/free-regular-svg-icons';
+import { column1 } from '@/desktops/basic/table.data';
+import { generateTableData } from '@/desktops/basic/basic.utils';
 
 const menuList = [
   {
@@ -212,7 +214,12 @@ const menuList = [
     icon: faFileText,
     text: 'Облікові документи',
     subMenu: [
-      { id: 10.1, text: 'За сьогодні' },
+      {
+        id: 10.1,
+        text: 'За сьогодні',
+        columns: column1,
+        rows: generateTableData(4, column1.length),
+      },
       { id: 10.2, text: 'За тиждень' },
       { id: 10.3, text: 'За 30 днів' },
       { id: 10.4, text: 'За поточний місяць' },

@@ -1,5 +1,5 @@
 import Basic from '@/desktops/basic/basic';
-import Content2 from '@/desktops/content/content2';
+import ReusableTable from '@/desktops/basic/reusable-table';
 import { createContext, useState } from 'react';
 
 export const DesktopContext = createContext(null);
@@ -17,11 +17,11 @@ export const DesktopProvider = ({ children }) => {
   );
   const [desktops, setDesktops] = useState(initialDesktops);
 
-  const addDesktop = (title, content) => {
+  const addDesktop = ({ title, columns, rows, id }) => {
     const newDesktop = {
-      id: desktops.length + 1,
+      id,
       title,
-      content,
+      content: <ReusableTable headerColumns={columns} data={rows} />,
     };
     setDesktops((prevDesktops) => [...prevDesktops, newDesktop]);
     setActiveDesktopItem(newDesktop);
