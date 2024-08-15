@@ -1,11 +1,15 @@
 import { DesktopContext } from '@/shared/context/context';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBell, faMessage, faUser } from '@fortawesome/free-regular-svg-icons';
-import { faDesktop, faSearch } from '@fortawesome/free-solid-svg-icons';
+import {
+  faDesktop,
+  faSearch,
+  faTimes,
+} from '@fortawesome/free-solid-svg-icons';
 import { useContext } from 'react';
 
 function Header() {
-  const { desktops, activeDesktopItem, setActiveDesktopItem } =
+  const { desktops, activeDesktopItem, setActiveDesktopItem, closeDesktop } =
     useContext(DesktopContext);
   return (
     <header>
@@ -21,6 +25,10 @@ function Header() {
               onClick={() => setActiveDesktopItem(desktop)}
             >
               {desktop.title}
+              <FontAwesomeIcon
+                icon={faTimes}
+                onClick={() => closeDesktop(desktop.id)}
+              />
             </button>
           ))}
         </div>
