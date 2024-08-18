@@ -44,6 +44,7 @@ function Basic() {
               onToggleCollapse={() => toggleCollapse(table.key)}
               onClose={() => closeTable(table.key)}
               icons={table.icons}
+              id={table.key}
             />
           ))}
         </div>
@@ -59,6 +60,7 @@ function Basic() {
               onToggleCollapse={() => toggleCollapse(table.key)}
               onClose={() => closeTable(table.key)}
               icons={table.icons}
+              id={table.key}
             />
           ))}
         </div>

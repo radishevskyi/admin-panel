@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import menuList from '@/shared/constants/sidebar.data';
+import { menuList } from './sidebar.data';
 import SidebarHeader from '@/shared/components/sidebar/sidebar-header';
 import ListItem from './list-item';
 

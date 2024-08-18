@@ -1,13 +1,14 @@
 import Basic from '@/desktops/basic/basic';
 import ReusableTable from '@/desktops/basic/reusable-table';
 import { createContext, useState } from 'react';
+import { v4 as uuidv4 } from 'uuid';
 
 export const DesktopContext = createContext(null);
 
 export const DesktopProvider = ({ children }) => {
   const initialDesktops = [
     {
-      id: 1,
+      id: uuidv4(),
       title: 'Базовий робочий стіл',
       content: <Basic />,
     },

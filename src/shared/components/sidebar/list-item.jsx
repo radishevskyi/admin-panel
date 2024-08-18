@@ -1,7 +1,7 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
 import { useContext } from 'react';
-import { DesktopContext } from '@/shared/context/context';
+import { DesktopContext } from '@/shared/context/desktop';
 
 function ListItem({
   text,

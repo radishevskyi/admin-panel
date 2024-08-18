@@ -1,4 +1,4 @@
-import { DesktopContext } from '@/shared/context/context';
+import { DesktopContext } from '@/shared/context/desktop';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBell, faMessage, faUser } from '@fortawesome/free-regular-svg-icons';
 import {

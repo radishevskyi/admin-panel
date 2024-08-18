@@ -1,9 +1,12 @@
+import { v4 as uuidv4 } from 'uuid';
+
 export const generateTableData = (rows, columns) => {
   return Array.from({ length: rows }, (_, rowIndex) => {
-    return Array.from({ length: columns }, (_, colIndex) => {
-      const id = `${rowIndex}-${colIndex}`;
+    const id = uuidv4();
+    const rowData = Array.from({ length: columns }, (_, colIndex) => {
       const text = `Рядок ${rowIndex + 1} Колонка ${colIndex + 1}`;
-      return { id, text };
+      return { id: uuidv4(), text };
     });
+    return { id, rowData };
   });
 };
