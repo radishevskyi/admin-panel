@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ReusableTable = ({ headerColumns, data }) => {
+const ReusableTable = ({ headerColumns, data, id }) => {
   return (
     <table>
       <thead>
@@ -15,7 +15,7 @@ const ReusableTable = ({ headerColumns, data }) => {
       <tbody>
         {data.map((row) => (
           <tr className='table-row' key={row.id}>
-            {row.map((colData) => (
+            {row.rowData.map((colData) => (
               <td className='table-header-items' key={colData.id}>
                 {colData.text}
               </td>

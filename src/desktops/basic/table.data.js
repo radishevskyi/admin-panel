@@ -1,3 +1,4 @@
+import { v4 as uuidv4 } from 'uuid';
 import {
   faCheck,
   faFilter,
@@ -7,58 +8,58 @@ import {
 import { generateTableData } from './basic.utils';
 
 const column1 = [
-  { id: 1, text: 'Реєстраційний номер' },
-  { id: 2, text: 'Реєстраційна дата' },
-  { id: 3, text: 'На розгляді' },
-  { id: 4, text: 'Короткий зміст' },
-  { id: 5, text: 'Кореспондент' },
-  { id: 6, text: 'Строк' },
-  { id: 7, text: 'Вид документа' },
-  { id: 8, text: 'Стан' },
+  { id: uuidv4(), text: 'Реєстраційний номер' },
+  { id: uuidv4(), text: 'Реєстраційна дата' },
+  { id: uuidv4(), text: 'На розгляді' },
+  { id: uuidv4(), text: 'Короткий зміст' },
+  { id: uuidv4(), text: 'Кореспондент' },
+  { id: uuidv4(), text: 'Строк' },
+  { id: uuidv4(), text: 'Вид документа' },
+  { id: uuidv4(), text: 'Стан' },
 ];
 
 const column2 = [
-  { id: 1, text: 'Виконавець' },
-  { id: 2, text: 'Роль' },
-  { id: 3, text: 'Текст пункту' },
-  { id: 4, text: 'Строк' },
-  { id: 5, text: 'Документ' },
-  { id: 6, text: 'Вид документа' },
-  { id: 7, text: 'Кореспондент' },
-  { id: 8, text: 'Зміст' },
-  { id: 9, text: 'Стан' },
+  { id: uuidv4(), text: 'Виконавець' },
+  { id: uuidv4(), text: 'Роль' },
+  { id: uuidv4(), text: 'Текст пункту' },
+  { id: uuidv4(), text: 'Строк' },
+  { id: uuidv4(), text: 'Документ' },
+  { id: uuidv4(), text: 'Вид документа' },
+  { id: uuidv4(), text: 'Кореспондент' },
+  { id: uuidv4(), text: 'Зміст' },
+  { id: uuidv4(), text: 'Стан' },
 ];
 
 const column3 = [
-  { id: 1, text: 'Підписант' },
-  { id: 2, text: 'Текст завдання' },
-  { id: 3, text: 'Строк' },
-  { id: 4, text: 'Документ' },
-  { id: 5, text: 'Вид документа' },
-  { id: 6, text: 'Зміст' },
+  { id: uuidv4(), text: 'Підписант' },
+  { id: uuidv4(), text: 'Текст завдання' },
+  { id: uuidv4(), text: 'Строк' },
+  { id: uuidv4(), text: 'Документ' },
+  { id: uuidv4(), text: 'Вид документа' },
+  { id: uuidv4(), text: 'Зміст' },
 ];
 
 const column4 = [
-  { id: 1, text: 'Кому' },
-  { id: 2, text: 'Вид' },
-  { id: 3, text: 'Системний номер' },
-  { id: 4, text: 'Вид документа' },
-  { id: 5, text: 'Зміст' },
-  { id: 6, text: 'Дата створення' },
-  { id: 7, text: 'Створив' },
-  { id: 8, text: 'Строк' },
+  { id: uuidv4(), text: 'Кому' },
+  { id: uuidv4(), text: 'Вид' },
+  { id: uuidv4(), text: 'Системний номер' },
+  { id: uuidv4(), text: 'Вид документа' },
+  { id: uuidv4(), text: 'Зміст' },
+  { id: uuidv4(), text: 'Дата створення' },
+  { id: uuidv4(), text: 'Створив' },
+  { id: uuidv4(), text: 'Строк' },
 ];
 
 const column5 = [
-  { id: 1, text: 'Виконавець' },
-  { id: 2, text: 'Роль' },
-  { id: 3, text: 'Текст пункту' },
-  { id: 4, text: 'Строк' },
-  { id: 5, text: 'Реєстраційний номер' },
-  { id: 6, text: 'Реєстраційна дата' },
-  { id: 7, text: 'Вид документа' },
-  { id: 8, text: 'Кореспондент' },
-  { id: 9, text: 'Зміст' },
+  { id: uuidv4(), text: 'Виконавець' },
+  { id: uuidv4(), text: 'Роль' },
+  { id: uuidv4(), text: 'Текст пункту' },
+  { id: uuidv4(), text: 'Строк' },
+  { id: uuidv4(), text: 'Реєстраційний номер' },
+  { id: uuidv4(), text: 'Реєстраційна дата' },
+  { id: uuidv4(), text: 'Вид документа' },
+  { id: uuidv4(), text: 'Кореспондент' },
+  { id: uuidv4(), text: 'Зміст' },
 ];
 
 const iconSets = {

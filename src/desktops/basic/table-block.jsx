@@ -17,6 +17,7 @@ function TableBlock({
   onToggleCollapse,
   onClose,
   icons,
+  id,
 }) {
   const [isClosing, setIsClosing] = useState(false);
 
@@ -61,7 +62,7 @@ function TableBlock({
             ))}
           </div>
           <div className='desktop-table'>
-            <ReusableTable headerColumns={headerColumns} data={data} />
+            <ReusableTable id={id} headerColumns={headerColumns} data={data} />
           </div>
         </>
       )}

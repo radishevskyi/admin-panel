@@ -1,5 +1,7 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
+import { useContext } from 'react';
+import { DesktopContext } from '@/shared/context/desktop';
 
 function ListItem({
   text,
@@ -12,25 +14,37 @@ function ListItem({
   handleSubItemToggle,
   className,
   indentLevel = 1,
+  columns,
+  rows,
+  id,
 }) {
   const indentStyle = {
     paddingLeft: `${indentLevel * 10}px`,
   };
+
+  const { addDesktop } = useContext(DesktopContext);
+
   return (
     <li className={`list-item-container ${className || ''}`}>
       <div
         className={`sidebar-list-item ${isOpen ? 'active' : ''} ${
           isSidebarCollapsed ? 'collapsed' : ''
         }`}
-        onClick={onClick}
+        onClick={
+          !subMenu
+            ? () => addDesktop({ id, columns, rows, title: text })
+            : onClick
+        }
         style={indentStyle}
       >
-        <FontAwesomeIcon
-          icon={icon}
-          className={`menu-icons ${
-            isSidebarCollapsed ? 'is--sidebar-collapsed' : ''
-          }`}
-        />
+        {icon && (
+          <FontAwesomeIcon
+            icon={icon}
+            className={`menu-icons ${
+              isSidebarCollapsed ? 'is--sidebar-collapsed' : ''
+            }`}
+          />
+        )}
         {!isSidebarCollapsed && (
           <>
             <span>{text}</span>
@@ -56,6 +70,9 @@ function ListItem({
               isOpen={subItem.id === openSubItemId}
               handleSubItemToggle={() => {}}
               indentLevel={indentLevel + 1}
+              columns={subItem.columns || []}
+              rows={subItem.rows || []}
+              id={subItem.id}
             />
           ))}
         </ul>

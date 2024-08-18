@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import menuList from '@/shared/constants/menuList';
+import { menuList } from './sidebar.data';
 import SidebarHeader from '@/shared/components/sidebar/sidebar-header';
 import ListItem from './list-item';
 
@@ -45,6 +45,9 @@ function Sidebar() {
               isOpen={openItemId === item.id}
               openSubItemId={openSubItemId}
               handleSubItemToggle={handleSubItemToggle}
+              columns={item.columns || []}
+              rows={item.rows || []}
+              id={item.id}
             />
           ))}
         </ul>

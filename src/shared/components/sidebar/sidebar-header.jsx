@@ -6,7 +6,7 @@ import {
   faChevronRight,
 } from '@fortawesome/free-solid-svg-icons';
 import { faStar, faFolder } from '@fortawesome/free-regular-svg-icons';
-import dropDownMenuList from '@/shared/constants/dropDownMenuList';
+import { dropDownMenuList } from './sidebar.data';
 
 function SidebarHeader({ onToggleSidebar, isCollapsed }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);

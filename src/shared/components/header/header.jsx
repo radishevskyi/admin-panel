@@ -1,8 +1,16 @@
-import { faBell, faMessage, faUser } from '@fortawesome/free-regular-svg-icons';
-import { faDesktop, faSearch } from '@fortawesome/free-solid-svg-icons';
+import { DesktopContext } from '@/shared/context/desktop';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBell, faMessage, faUser } from '@fortawesome/free-regular-svg-icons';
+import {
+  faDesktop,
+  faSearch,
+  faTimes,
+} from '@fortawesome/free-solid-svg-icons';
+import { useContext } from 'react';
 
-function Header({ desktops, setActiveDesktop, activeDesktopId }) {
+function Header() {
+  const { desktops, activeDesktopItem, setActiveDesktopItem, closeDesktop } =
+    useContext(DesktopContext);
   return (
     <header>
       <div className='header'>
@@ -10,12 +18,17 @@ function Header({ desktops, setActiveDesktop, activeDesktopId }) {
           <button className='account-button'>{desktops.length}</button>
           {desktops.map((desktop) => (
             <button
+              key={desktop.id}
               className={`active-buttons ${
-                desktop.id === activeDesktopId ? 'active-id' : ''
+                desktop.id === activeDesktopItem.id ? 'active-id' : ''
               }`}
-              onClick={() => setActiveDesktop(desktop)}
+              onClick={() => setActiveDesktopItem(desktop)}
             >
               {desktop.title}
+              <FontAwesomeIcon
+                icon={faTimes}
+                onClick={() => closeDesktop(desktop.id)}
+              />
             </button>
           ))}
         </div>
