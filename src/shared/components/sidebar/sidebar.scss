@@ -2,7 +2,8 @@
 @import './sidebar-header.scss';
 
 .sidebar {
-  width: 220px;
+  min-width: 220px;
+  max-width: 220px;
   background-color: #171821;
   box-sizing: border-box;
   height: 100vh;
@@ -18,7 +19,7 @@
 .sidebar-list {
   font-size: 13px;
   cursor: pointer;
-  height: calc(100vh - 70px);
+  height: calc(100vh - 60px);
   overflow-y: auto;
   scrollbar-width: thin;
   scrollbar-color: darkgrey #f1f1f1;

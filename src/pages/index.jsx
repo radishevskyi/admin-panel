@@ -2,6 +2,7 @@ import { useContext } from 'react';
 import Header from '@/shared/components/header/header';
 import Head from 'next/head';
 import { DesktopContext } from '@/shared/context/desktop';
+import Sidebar from '@/shared/components/sidebar/sidebar';
 
 function Index() {
   const { activeDesktopItem } = useContext(DesktopContext);
@@ -12,10 +13,13 @@ function Index() {
         <title>Document flow</title>
         <meta name='description' content='content' />
       </Head>
-      <main>
-        <Header />
-        {activeDesktopItem?.content}
-      </main>
+      <div className='container'>
+        <Sidebar />
+        <main>
+          <Header />
+          <div className='content'>{activeDesktopItem?.content}</div>
+        </main>
+      </div>
     </>
   );
 }

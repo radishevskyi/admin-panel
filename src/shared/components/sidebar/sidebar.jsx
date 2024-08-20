@@ -26,7 +26,7 @@ function Sidebar() {
 
   return (
     <>
-      <div className={`sidebar ${isCollapsed ? 'sidebar-collapsed' : ''}`}>
+      <aside className={`sidebar ${isCollapsed ? 'sidebar-collapsed' : ''}`}>
         <SidebarHeader
           onToggleSidebar={handleCollapseToggle}
           isCollapsed={isCollapsed}
@@ -51,7 +51,7 @@ function Sidebar() {
             />
           ))}
         </ul>
-      </div>
+      </aside>
     </>
   );
 }
