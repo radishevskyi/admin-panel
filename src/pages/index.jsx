@@ -15,9 +15,9 @@ function Index() {
       </Head>
       <div className='container'>
         <Sidebar />
-        <main>
+        <main className='content'>
           <Header />
-          <div className='content'>{activeDesktopItem?.content}</div>
+          <div>{activeDesktopItem?.content}</div>
         </main>
       </div>
     </>
