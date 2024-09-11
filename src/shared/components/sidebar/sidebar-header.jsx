@@ -32,7 +32,7 @@ function SidebarHeader({ onToggleSidebar, isCollapsed }) {
         <div className={`dropdown-menu ${isCollapsed ? 'collapsed-menu' : ''}`}>
           <ul className='dropdown-menu-list'>
             {dropDownMenuList.map((item) => (
-              <li className='dropdown-menu-list-item'>
+              <li className='dropdown-menu-list-item' key={item.id}>
                 <FontAwesomeIcon icon={item.icon} className='menu-icons' />
                 <span className='dropdown-menu-item'>{item.text}</span>
                 <FontAwesomeIcon

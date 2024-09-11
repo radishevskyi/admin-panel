@@ -16,7 +16,7 @@ export default function Login() {
   return (
     <div className='login'>
       <form className='login-container' onSubmit={handleSubmit}>
-        <h1>Authorization</h1>
+        <h1>Log in to Document flow</h1>
         <div className='input-box'>
           <input
             type='text'
