@@ -12,6 +12,7 @@ import { useRouter } from 'next/router';
 import { useAuth } from '@/shared/context/auth';
 
 function Header() {
+  const menuItems = dropDownUserList();
   const { desktops, activeDesktopItem, setActiveDesktopItem, closeDesktop } =
     useContext(DesktopContext);
 
@@ -71,7 +72,7 @@ function Header() {
           {isMenuOpen && (
             <div className='dropdown-user-menu'>
               <ul className='dropdown-user-menu-list'>
-                {dropDownUserList.map((item) => (
+                {menuItems.map((item) => (
                   <li
                     className='dropdown-user-menu-list-item'
                     key={item.id}
