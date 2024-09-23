@@ -22,12 +22,11 @@ function Header() {
     setIsMenuOpen(!isMenuOpen);
   };
 
-  const { logout } = useAuth();
   const router = useRouter();
 
   const handleMenuClick = (action) => {
-    if (action === 'logout') {
-      logout();
+    if (typeof action === 'function') {
+      action();
       router.push('/login');
     }
   };
