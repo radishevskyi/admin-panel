@@ -37,9 +37,6 @@
   margin-right: 10px;
 }
 
-.header-menu {
-}
-
 .header-buttons {
   background: none;
   border: none;
@@ -49,5 +46,38 @@
 
   &:hover {
     color: #171821;
+  }
+}
+
+.header-item {
+  position: relative;
+}
+
+.dropdown-user-menu {
+  position: absolute;
+  top: 35px;
+  right: 1px;
+  background-color: white;
+  border: 1px solid #1e1f32;
+  border-radius: 3px;
+  width: 180px;
+  z-index: 1000;
+}
+
+.dropdown-user-menu-list {
+  line-height: 1.5;
+  padding: 5px 2px;
+  color: black;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.dropdown-user-menu-list-item {
+  padding: 5px 10px;
+  display: flex;
+  align-items: center;
+
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.09);
   }
 }

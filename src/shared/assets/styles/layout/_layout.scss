@@ -1,0 +1,14 @@
+.container {
+  display: flex;
+  height: 100vh;
+}
+
+.content {
+  min-width: calc(100% - 220px);
+  max-width: calc(100% - 220px);
+
+  &.is--collapsed {
+    min-width: calc(100% - 60px);
+    max-width: calc(100% - 60px);
+  }
+}

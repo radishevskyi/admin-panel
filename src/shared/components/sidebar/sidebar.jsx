@@ -1,12 +1,11 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { menuList } from './sidebar.data';
 import SidebarHeader from '@/shared/components/sidebar/sidebar-header';
 import ListItem from './list-item';
 
-function Sidebar() {
+function Sidebar({ isCollapsed, setIsCollapsed }) {
   const [openItemId, setOpenItemId] = useState(null);
   const [openSubItemId, setOpenSubItemId] = useState(null);
-  const [isCollapsed, setIsCollapsed] = useState(false);
 
   const handleToggle = (id) => () => {
     if (isCollapsed) {
@@ -24,9 +23,16 @@ function Sidebar() {
     setIsCollapsed(!isCollapsed);
   };
 
+  useEffect(() => {
+    if (isCollapsed) {
+      setOpenItemId(null);
+      setOpenSubItemId(null);
+    }
+  }, [isCollapsed]);
+
   return (
     <>
-      <div className={`sidebar ${isCollapsed ? 'sidebar-collapsed' : ''}`}>
+      <aside className={`sidebar ${isCollapsed ? 'sidebar-collapsed' : ''}`}>
         <SidebarHeader
           onToggleSidebar={handleCollapseToggle}
           isCollapsed={isCollapsed}
@@ -51,7 +57,7 @@ function Sidebar() {
             />
           ))}
         </ul>
-      </div>
+      </aside>
     </>
   );
 }

@@ -1,4 +1,4 @@
-@import './table-block.scss';
+@import './_table-block.scss';
 
 .button-refresh {
   padding: 5px;
@@ -23,7 +23,7 @@
 .desktop-container {
   display: flex;
   align-items: flex-start;
-  height: calc(100vh - 110px);
+  height: calc(100vh - 100px);
   overflow-y: auto;
   scrollbar-width: thin;
   scrollbar-color: darkgrey #f1f1f1;

@@ -1,16 +1,18 @@
-import Sidebar from '@/shared/components/sidebar/sidebar';
-import '@/pages/_index.scss';
+'use client';
+
+import '@/pages/index.scss';
+import { AuthProvider } from '@/shared/context/auth';
 import { DesktopProvider } from '@/shared/context/desktop';
+import { LocalStorageProvider } from '@/shared/context/local-storage';
 
 export default function App({ Component, pageProps }) {
   return (
-    <DesktopProvider>
-      <div className='container'>
-        <Sidebar />
-        <div className='content'>
+    <LocalStorageProvider>
+      <AuthProvider>
+        <DesktopProvider>
           <Component {...pageProps} />
-        </div>
-      </div>
-    </DesktopProvider>
+        </DesktopProvider>
+      </AuthProvider>
+    </LocalStorageProvider>
   );
 }
