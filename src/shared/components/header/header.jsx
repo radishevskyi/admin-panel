@@ -1,15 +1,14 @@
 import { DesktopContext } from '@/shared/context/desktop';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBell, faMessage, faUser } from '@fortawesome/free-regular-svg-icons';
 import {
   faDesktop,
   faSearch,
   faTimes,
 } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { useRouter } from 'next/router';
 import { useContext, useState } from 'react';
 import dropDownUserList from './header.data';
-import { useRouter } from 'next/router';
-import { useAuth } from '@/shared/context/auth';
 
 function Header() {
   const menuItems = dropDownUserList();
